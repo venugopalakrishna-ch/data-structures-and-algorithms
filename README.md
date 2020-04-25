@@ -13,3 +13,8 @@ File Location: data_structures_and_algorithms\challenges\array_reverse_2\array_r
 Asset File Location:
 data_structures_and_algorithms\challenges\array_reverse_2\assets\array-reverse2.jpg
 
+insertShiftArray function takes in an array and the value to be added to middle index of an array. Return an array with the new value added at the middle index.
+File Location:
+data_structures_and_algorithms\challenges\array_shift\array_shift.py
+Asset File Location:
+data_structures_and_algorithms\challenges\array_shift\assets\array-shift.jpg

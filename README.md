@@ -55,3 +55,23 @@ BinarySearch method will be called to identify the middle index, compares the va
 ## Solution
 <!--Refer the white board image in the followiing location 
 data_structures_and_algorithms\challenges\array_binary_search\assets\array-binary-search.jpg -->
+
+# Challenge Summary 4
+<!-- Find out the sum of each row in a matrix of arbitary size -->
+## Challenge Description
+<!-- User will be asked to enter the size of multi dimensional array and individual array. Based on these inputs, user will be prompted to enter values into an individual array. The formated multi dimensional array will be passed as input to array_matrix_sum function. This function sum up the elements in each individual array and return the output
+-->
+## Approach & Efficiency
+<!-- Prompts user to enter the matrix size
+Promots user to enter array size
+Promots user to enter elements into an individual array
+Formate the user inputs into an multi dimensional array
+Loop through each individual array from an multi dimensional array and sum up the elements
+Add the sum of each individual array to a new array
+Repeat the process for all individual array and print the final output.
+-->
+## Solution
+<!--Refer the white board image in the followiing location 
+data_structures_and_algorithms\challenges\array_sum\assets\array-sum.jpg -->
+
+

@@ -3,6 +3,7 @@ from data_structures_and_algorithms import __version__
 from data_structures_and_algorithms.challenges.array_reverse.array_reverse import reverseArray
 from data_structures_and_algorithms.challenges.array_shift.array_shift import insertShiftArray
 from data_structures_and_algorithms.challenges.array_binary_search.array_binary_search import BinarySearch
+from data_structures_and_algorithms.challenges.array_sum.array_sum import array_matrix_sum
 
 #@pytest.mark.parametrize("test_input1","test_input2","expected",[([1,2,3,4],4,3),([1,2,3,4],3,2)])
 
@@ -75,3 +76,9 @@ def test_array_binary_search_12():
 
 def test_array_binary_search_13():
     assert BinarySearch([1,2,3,4,5],-12) == -1
+
+def test_array_matrix_sum():
+    assert array_matrix_sum([[1,2,3],[4,'Test',6],[7,-8,9]]) == [6,10,8]
+
+def test_array_matrix_sum_one():
+    assert array_matrix_sum([[1,2,-3],[4,'Test',-6],[7,-8,9]]) == [0,-2,-8]

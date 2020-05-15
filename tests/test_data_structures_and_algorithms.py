@@ -4,6 +4,7 @@ from data_structures_and_algorithms.challenges.array_reverse.array_reverse impor
 from data_structures_and_algorithms.challenges.array_shift.array_shift import insertShiftArray
 from data_structures_and_algorithms.challenges.array_binary_search.array_binary_search import BinarySearch
 from data_structures_and_algorithms.challenges.array_sum.array_sum import array_matrix_sum
+from data_structures_and_algorithms.data_structures.linked_list.linked_list import Node, LinkedList
 
 #@pytest.mark.parametrize("test_input1","test_input2","expected",[([1,2,3,4],4,3),([1,2,3,4],3,2)])
 
@@ -81,4 +82,53 @@ def test_array_matrix_sum():
     assert array_matrix_sum([[1,2,3],[4,'Test',6],[7,-8,9]]) == [6,10,8]
 
 def test_array_matrix_sum_one():
-    assert array_matrix_sum([[1,2,-3],[4,'Test',-6],[7,-8,9]]) == [0,-2,-8]
+    assert array_matrix_sum([[1,2,-3],[4,'Test',-6],[7,-8,9]]) == [0,-2,8]
+
+def test_node_apples():
+    node = Node("apples")
+    assert node.value == "apples"
+    assert node.next  == None
+
+def test_linked_list_creation():
+    ll = LinkedList()
+    assert ll.head == None
+
+def test_insert_one():
+    ll = LinkedList()
+    ll.insert("apples")
+    assert ll.head.value == "apples"
+    assert ll.head.next == None
+
+def test_insert_two():
+    ll = LinkedList()
+    ll.insert("apples")
+    ll.insert("bananas")
+    assert ll.head.value == "bananas"
+    assert ll.head.next.value  == "apples"
+
+def test_insert_more():
+    ll = LinkedList()
+    ll.insert("apples")
+    ll.insert("bananas")
+    ll.insert("cherries")
+    assert ll.head.value == "cherries"
+    assert ll.head.next.value == "bananas"        
+    assert ll.head.next.next.value == "apples"     
+
+def test_includes():
+    ll = LinkedList()
+    ll.insert("apples")
+    ll.insert("bananas")
+    ll.insert("cherries")
+    assert ll.includes("bananas")
+    assert ll.includes("oranges") == False
+
+def test_tostring():
+    ll = LinkedList()    
+    assert ll.__str__() == "None"
+    ll.insert("apples")    
+    assert ll.__str__() == "{apples}->None"
+    ll.insert("bananas")
+    assert ll.__str__() == "{bananas}->{apples}->None"
+    ll.insert("cherries")
+    assert ll.__str__() == "{cherries}->{bananas}->{apples}->None"

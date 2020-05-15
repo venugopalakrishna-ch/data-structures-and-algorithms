@@ -87,3 +87,24 @@ Program should return a collection of all the values that exist in the linked li
 ## Solution
 Refer the white board image in the followiing location 
 data_structures_and_algorithms\data_structures\linked_list\linked_list.py
+
+# Challenge Summary 4 B
+Doubly Linked List Implementation
+## Challenge Description
+Create a Node class that has properties for the value stored in the Node, and a pointer to the next Node and previous node
+Within your LinkedList class, include a head property and set the value to previous and next pointers Upon instantiation, an empty Linked List should be created. 
+- Define a method called insert which takes any value as an argument and adds a new node with that value to the head of the list with an O(1) Time performance and set the pointer to previous and next nodes.
+- Define a method called includes which takes any value as an argument and returns a boolean result depending on whether that value exists as a Node’s value somewhere within the list.
+- Define a method called toString (or __str__ in Python) which takes in no arguments and returns a string representing all the values in the Linked List, formatted as:
+        "{ a } <-> { b } <-> { c } <-> NULL"
+## Approach & Efficiency
+User can successfully instantiate an empty linked list
+User can properly insert into the linked list
+The head property will properly point to the first node in the linked list
+User can properly insert multiple nodes into the linked list
+True should be return when finding a value within the linked list that exists
+False should be return when searching for a value in the linked list that does not exist
+Program should return a collection of all the values that exist in the linked list
+## Solution
+Refer the white board image in the followiing location 
+data_structures_and_algorithms\data_structures\doubly_linked_list\doubly_linked_list.py

@@ -5,6 +5,7 @@ from data_structures_and_algorithms.challenges.array_shift.array_shift import in
 from data_structures_and_algorithms.challenges.array_binary_search.array_binary_search import BinarySearch
 from data_structures_and_algorithms.challenges.array_sum.array_sum import array_matrix_sum
 from data_structures_and_algorithms.data_structures.linked_list.linked_list import Node, LinkedList
+from data_structures_and_algorithms.data_structures.doubly_linked_list.doubly_linked_list import Node, DoublyLinkedList
 
 #@pytest.mark.parametrize("test_input1","test_input2","expected",[([1,2,3,4],4,3),([1,2,3,4],3,2)])
 
@@ -132,3 +133,60 @@ def test_tostring():
     assert ll.__str__() == "{bananas}->{apples}->None"
     ll.insert("cherries")
     assert ll.__str__() == "{cherries}->{bananas}->{apples}->None"
+
+def test_doubly_node_apples():
+    node = Node("apples")
+    assert node.value == "apples"
+    assert node.next  == None
+    assert node.prev  == None
+
+def test_doubly_linked_list_creation():
+    ll = DoublyLinkedList()
+    assert ll.head == None
+
+def test_doubly_insert_one():
+    ll = DoublyLinkedList()
+    ll.insert("apples")
+    assert ll.head.value == "apples"
+    assert ll.head.next == None
+    assert ll.head.prev == None
+
+def test_doubly_insert_two():
+    ll = DoublyLinkedList()
+    ll.insert("apples")
+    ll.insert("bananas")    
+    assert ll.head.value == "apples"
+    assert ll.head.next.value == "bananas"    
+    assert ll.head.prev == None
+    assert (ll.head.next).prev.value == "apples"
+
+
+def test_doubly_insert_more():
+    ll = DoublyLinkedList()
+    ll.insert("apples")
+    ll.insert("bananas")
+    ll.insert("cherries")
+    assert ll.head.value == "apples"
+    assert ll.head.next.value == "bananas"
+    assert ll.head.next.next.value == "cherries"
+    assert ll.head.prev == None
+    assert (ll.head.next).prev.value == "apples"
+    assert (ll.head.next.next).prev.value == "bananas"
+    
+def test_doubly_includes():
+    ll = DoublyLinkedList()
+    ll.insert("apples")
+    ll.insert("bananas")
+    ll.insert("cherries")
+    assert ll.includes("bananas")
+    assert ll.includes("oranges") == False
+
+def test_doubly_tostring():
+    ll = DoublyLinkedList()    
+    assert ll.__str__() == "None"
+    ll.insert("apples")    
+    assert ll.__str__() == "{apples}->None"
+    ll.insert("bananas")
+    assert ll.__str__() == "{apples}->{bananas}->None"
+    ll.insert("cherries")
+    assert ll.__str__() == "{apples}->{bananas}->{cherries}->None"

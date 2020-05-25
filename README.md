@@ -67,7 +67,7 @@ Repeat the process for all individual array and print the final output.
 Refer the white board image in the followiing location 
 data_structures_and_algorithms\challenges\array_sum\assets\array-sum.jpg 
 
-# Challenge Summary 4 A
+# Challenge Summary 5 A
 Singly Linked List Implementation
 ## Challenge Description
 Create a Node class that has properties for the value stored in the Node, and a pointer to the next Node.
@@ -85,10 +85,10 @@ True should be return when finding a value within the linked list that exists
 False should be return when searching for a value in the linked list that does not exist
 Program should return a collection of all the values that exist in the linked list
 ## Solution
-Refer the white board image in the followiing location 
+Refer the code here
 data_structures_and_algorithms\data_structures\linked_list\linked_list.py
 
-# Challenge Summary 4 B
+# Challenge Summary 5 B
 Doubly Linked List Implementation
 ## Challenge Description
 Create a Node class that has properties for the value stored in the Node, and a pointer to the next Node and previous node
@@ -106,5 +106,24 @@ True should be return when finding a value within the linked list that exists
 False should be return when searching for a value in the linked list that does not exist
 Program should return a collection of all the values that exist in the linked list
 ## Solution
-Refer the white board image in the followiing location 
+Refer the code here 
 data_structures_and_algorithms\data_structures\doubly_linked_list\doubly_linked_list.py
+
+# Challenge Summary 6
+Extenstion of Linked List class with additinal methods.
+## Challenge Description
+- append(value) which adds a new node with the given value to the end of the list
+- insertBefore(value, newVal) which add a new node with the given newValue immediately before the first value node
+- insertAfter(value, newVal) which add a new node with the given newValue immediately after the first value node
+- deleteNode(value) which deletes a node with the given value from the linked list.
+## Approach & Efficiency
+Can successfully add a node to the end of the linked list
+Can successfully add multiple nodes to the end of a linked list
+Can successfully insert a node before a node located i the middle of a linked list
+Can successfully insert a node before the first node of a linked list
+Can successfully insert after a node in the middle of the linked list
+Can successfully insert a node after the last node of the linked list
+Can successfully delete a node
+## Solution
+Refer the code here 
+data_structures_and_algorithms\data_structures\linked_list\linked_list.py

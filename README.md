@@ -125,5 +125,6 @@ Can successfully insert after a node in the middle of the linked list
 Can successfully insert a node after the last node of the linked list
 Can successfully delete a node
 ## Solution
-Refer the code here 
+Refer the code and white boarding here 
 data_structures_and_algorithms\data_structures\linked_list\linked_list.py
+data_structures_and_algorithms\data_structures\linked_list\asserts\

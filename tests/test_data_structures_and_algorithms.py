@@ -190,3 +190,123 @@ def test_doubly_tostring():
     assert ll.__str__() == "{apples}->{bananas}->None"
     ll.insert("cherries")
     assert ll.__str__() == "{apples}->{bananas}->{cherries}->None"
+
+def test_append():
+    ll = LinkedList()   
+    assert ll.__str__() == "None"     
+    ll.append("5")    
+    assert ll.__str__() == "{5}->None"
+
+def test_append1():
+    ll = LinkedList()   
+    assert ll.__str__() == "None"     
+    ll.append("1")    
+    assert ll.__str__() == "{1}->None"
+    ll.append("3")
+    assert ll.__str__() == "{1}->{3}->None"
+    ll.append("2")
+    assert ll.__str__() == "{1}->{3}->{2}->None"
+    ll.append("5")
+    assert ll.__str__() == "{1}->{3}->{2}->{5}->None"
+
+def test_insertBefore():
+    ll = LinkedList()   
+    ll.append("1")    
+    ll.append("3")    
+    ll.append("2")   
+    ll.insertBefore("3","5")
+    assert ll.insertBefore("4","5") == "Node 4 does not exists in Linked List"
+    assert ll.insertBefore("8","10") == "Node 8 does not exists in Linked List"
+    assert ll.__str__() == "{1}->{5}->{3}->{2}->None"
+    
+def test_insertBefore1():
+    ll = LinkedList()   
+    ll.append("1")    
+    ll.append("3")    
+    ll.append("2")   
+    ll.insertBefore("1","5")
+    assert ll.insertBefore("4","5") == "Node 4 does not exists in Linked List"
+    assert ll.insertBefore("8","10") == "Node 8 does not exists in Linked List"
+    assert ll.__str__() == "{5}->{1}->{3}->{2}->None"
+
+def test_insertBefore2():
+    ll = LinkedList()   
+    ll.append("1")    
+    ll.append("3")    
+    ll.append("2")   
+    ll.insertBefore("2","5")
+    assert ll.insertBefore("4","5") == "Node 4 does not exists in Linked List"
+    assert ll.insertBefore("8","10") == "Node 8 does not exists in Linked List"
+    assert ll.__str__() == "{1}->{3}->{5}->{2}->None"
+
+def test_insertAfter():
+    ll = LinkedList()   
+    ll.append("1")    
+    ll.append("3")    
+    ll.append("2")   
+    ll.insertAfter("3","5")
+    assert ll.insertAfter("4","5") == "Node 4 does not exists in Linked List"
+    assert ll.insertAfter("8","10") == "Node 8 does not exists in Linked List"
+    assert ll.__str__() == "{1}->{3}->{5}->{2}->None"
+    
+def test_insertAfter1():
+    ll = LinkedList()   
+    ll.append("1")    
+    ll.append("3")    
+    ll.append("2")   
+    ll.insertAfter("2","5")
+    assert ll.insertAfter("4","5") == "Node 4 does not exists in Linked List"
+    assert ll.insertAfter("8","10") == "Node 8 does not exists in Linked List"
+    assert ll.__str__() == "{1}->{3}->{2}->{5}->None"
+
+def test_insertAfter2():
+    ll = LinkedList()   
+    ll.append("1")    
+    ll.append("2")    
+    ll.append("2")   
+    ll.insertAfter("2","5")
+    assert ll.insertAfter("4","5") == "Node 4 does not exists in Linked List"
+    assert ll.insertAfter("8","10") == "Node 8 does not exists in Linked List"
+    assert ll.__str__() == "{1}->{2}->{5}->{2}->None"
+
+def test_insertAfter3():
+    ll = LinkedList()   
+    ll.append("1")    
+    ll.append("2")    
+    ll.append("2")   
+    ll.insertAfter("1","5")
+    assert ll.insertAfter("4","5") == "Node 4 does not exists in Linked List"
+    assert ll.insertAfter("8","10") == "Node 8 does not exists in Linked List"
+    assert ll.__str__() == "{1}->{5}->{2}->{2}->None"
+
+def test_deleteNode():
+    ll = LinkedList()   
+    ll.append("1")    
+    ll.append("3")    
+    ll.append("2")   
+    ll.deleteNode("3")
+    assert ll.deleteNode("5") == "Node 5 does not exists in Linked List"
+    assert ll.deleteNode("10") == "Node 10 does not exists in Linked List"
+    assert ll.__str__() == "{1}->{2}->None"
+
+def test_deleteNode1():
+    ll = LinkedList()   
+    ll.append("1")    
+    ll.append("3")    
+    ll.append("2")   
+    ll.deleteNode("2")
+    assert ll.deleteNode("4") == "Node 4 does not exists in Linked List"
+    assert ll.deleteNode("8") == "Node 8 does not exists in Linked List"
+    assert ll.__str__() == "{1}->{3}->None"
+
+def test_deleteNode2():
+    ll = LinkedList()   
+    ll.append("1")    
+    ll.append("3")    
+    ll.append("2")   
+    ll.deleteNode("1")
+    assert ll.deleteNode("4") == "Node 4 does not exists in Linked List"
+    assert ll.deleteNode("8") == "Node 8 does not exists in Linked List"
+    assert ll.__str__() == "{3}->{2}->None"
+
+

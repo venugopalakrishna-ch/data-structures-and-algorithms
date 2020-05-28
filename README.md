@@ -127,4 +127,31 @@ Can successfully delete a node
 ## Solution
 Refer the code and white boarding here 
 data_structures_and_algorithms\data_structures\linked_list\linked_list.py
-data_structures_and_algorithms\data_structures\linked_list\asserts\
+data_structures_and_algorithms\data_structures\linked_list\assets\append and insertBefore.jpg
+data_structures_and_algorithms\data_structures\linked_list\assets\insertAfter and DeleteNode.jpg
+
+# Challenge Summary 7
+Extenstion of Linked List class with additinal methods.
+## Challenge Description
+A. Write a method for the Linked List class which takes a number, k, as a parameter. Return the node’s value that is k from the end of the linked list. You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
+
+B. implement a method that finds the node at the middle of the Linked List.
+## Approach & Efficiency
+A.
+Where k is greater than the length of the linked list
+Where k and the length of the list are the same
+Where k is not a positive integer
+Where the linked list is of a size 1
+“Happy Path” where k is not at the end, but somewhere in the middle of the linked list
+B.
+Where linked list is empty
+Where linked list size is 1
+Where linked list size is 2
+Where linked list size is 3
+Where linked list size is 4
+Where linked list size is 5
+
+## Solution
+Refer the code and white boarding here 
+data_structures_and_algorithms\data_structures\linked_list\linked_list.py
+data_structures_and_algorithms\data_structures\linked_list\assets\ll-kth-from-end.jpg

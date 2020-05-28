@@ -1,4 +1,4 @@
-#import pytest
+# import pytest
 from data_structures_and_algorithms import __version__
 from data_structures_and_algorithms.challenges.array_reverse.array_reverse import reverseArray
 from data_structures_and_algorithms.challenges.array_shift.array_shift import insertShiftArray
@@ -308,5 +308,45 @@ def test_deleteNode2():
     assert ll.deleteNode("4") == "Node 4 does not exists in Linked List"
     assert ll.deleteNode("8") == "Node 8 does not exists in Linked List"
     assert ll.__str__() == "{3}->{2}->None"
+
+def test_nthNodeValueFromEnd():
+    ll = LinkedList()
+    ll.append("1")
+    ll.append("3")
+    ll.append("8")
+    ll.append("2")
+    assert ll.nthNodeValueFromEnd(0) == "2"
+    assert ll.nthNodeValueFromEnd(1) == "8"
+    assert ll.nthNodeValueFromEnd(2) == "3"
+    assert ll.nthNodeValueFromEnd(3) == "1"
+    assert ll.nthNodeValueFromEnd(4) == "Index is out of range"
+    assert ll.nthNodeValueFromEnd(5) == "Index is out of range"
+    assert ll.nthNodeValueFromEnd(-1) == "Negative index is not allowed to search"
+    assert ll.nthNodeValueFromEnd(-99) == "Negative index is not allowed to search"
+
+def test_nthNodeValueFromEnd1():
+    ll = LinkedList()    
+    assert ll.nthNodeValueFromEnd(0) == "Index is out of range"
+    assert ll.nthNodeValueFromEnd(1) == "Index is out of range"
+    ll.append("1")
+    assert ll.nthNodeValueFromEnd(0) == "1"
+
+def test_fidnMiddleNodeValue():
+    ll = LinkedList()
+    assert ll.fidnMiddleNodeValue() == "Linked list is empty"
+    ll.append("1")
+    assert ll.fidnMiddleNodeValue() == "1"
+    ll.append("3")
+    assert ll.fidnMiddleNodeValue() == "1"
+    ll.append("8")
+    assert ll.fidnMiddleNodeValue() == "3"
+    ll.append("2")
+    assert ll.fidnMiddleNodeValue() == "3"
+    ll.append("5")
+    assert ll.fidnMiddleNodeValue() == "8"
+
+
+
+
 
 

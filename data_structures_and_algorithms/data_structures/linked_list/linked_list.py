@@ -76,7 +76,39 @@ class LinkedList:
             if match_found == "X":                      
                 prev_node.next = current.next                
             else:
-                return f"Node {value} does not exists in Linked List"    
+                return f"Node {value} does not exists in Linked List"  
+
+    def nthNodeValueFromEnd(self, index):
+        if index < 0:
+            return "Negative index is not allowed to search"
+        length = 0
+        current = self.head
+        while current is not None:
+            current = current.next
+            length += 1
+        if index >= length:
+            return "Index is out of range"
+        
+        current = self.head
+        for i in range(1, length - index):
+            current = current.next
+        return current.value
+
+    def fidnMiddleNodeValue(self):
+        if self.head is None:
+            return "Linked list is empty"
+        length = 0
+        current = self.head
+        while current is not None:
+            current = current.next
+            length += 1
+        mid_index =  (length+1) // 2
+        current = self.head
+        for i in range(1, mid_index):
+            current = current.next
+        return current.value
+
+
 
     def __str__(self):
         current = self.head  

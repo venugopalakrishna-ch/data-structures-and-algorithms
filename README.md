@@ -155,3 +155,12 @@ Where linked list size is 5
 Refer the code and white boarding here 
 data_structures_and_algorithms\data_structures\linked_list\linked_list.py
 data_structures_and_algorithms\data_structures\linked_list\assets\ll-kth-from-end.jpg
+
+# Challenge Summary 8
+Extenstion of Linked List class with additinal methods.
+## Challenge Description
+Write a function called mergeLists which takes two linked lists as arguments. Zip the two linked lists together into one so that the nodes alternate between the two lists and return a reference to the head of the zipped list. Try and keep additional space down to O(1). You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
+
+## Solution
+Refer the code here 
+data_structures_and_algorithms\data_structures\linked_list\linked_list.py

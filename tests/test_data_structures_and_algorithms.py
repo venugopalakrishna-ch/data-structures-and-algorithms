@@ -4,7 +4,7 @@ from data_structures_and_algorithms.challenges.array_reverse.array_reverse impor
 from data_structures_and_algorithms.challenges.array_shift.array_shift import insertShiftArray
 from data_structures_and_algorithms.challenges.array_binary_search.array_binary_search import BinarySearch
 from data_structures_and_algorithms.challenges.array_sum.array_sum import array_matrix_sum
-from data_structures_and_algorithms.data_structures.linked_list.linked_list import Node, LinkedList
+from data_structures_and_algorithms.data_structures.linked_list.linked_list import Node, LinkedList, mergeLists
 from data_structures_and_algorithms.data_structures.doubly_linked_list.doubly_linked_list import Node, DoublyLinkedList
 
 #@pytest.mark.parametrize("test_input1","test_input2","expected",[([1,2,3,4],4,3),([1,2,3,4],3,2)])
@@ -345,8 +345,53 @@ def test_fidnMiddleNodeValue():
     ll.append("5")
     assert ll.fidnMiddleNodeValue() == "8"
 
+def test_mergeLinkedListOne():    
+    ll1 = LinkedList()
+    ll1.append("10")
+    ll1.append("20")
+    ll1.append("30")    
+    ll2 = LinkedList()
+    ll2.append("5")
+    ll2.append("15")
+    ll2.append("25")
+    ll = LinkedList()
+    ll.head = mergeLists(ll1.head,ll2.head) 
+    assert ll.__str__() == "{10}->{5}->{20}->{15}->{30}->{25}->None"
 
 
+def test_mergeLinkedListTwo():    
+    ll1 = LinkedList()
+    ll1.append("1")
+    ll1.append("3")
+    ll1.append("2")    
+    ll2 = LinkedList()
+    ll2.append("5")
+    ll2.append("9")
+    ll2.append("4")
+    ll = LinkedList()
+    ll.head = mergeLists(ll1.head,ll2.head) 
+    assert ll.__str__() == "{1}->{5}->{3}->{9}->{2}->{4}->None"
 
+def test_mergeLinkedListThree():    
+    ll1 = LinkedList()
+    ll1.append("1")
+    ll1.append("3")      
+    ll2 = LinkedList()
+    ll2.append("5")
+    ll2.append("9")
+    ll2.append("4")
+    ll = LinkedList()
+    ll.head = mergeLists(ll1.head,ll2.head) 
+    assert ll.__str__() == "{1}->{5}->{3}->{9}->{4}->None"
 
-
+def test_mergeLinkedListFour():    
+    ll1 = LinkedList()
+    ll1.append("1")
+    ll1.append("3")
+    ll1.append("2")    
+    ll2 = LinkedList()
+    ll2.append("5")
+    ll2.append("9")    
+    ll = LinkedList()
+    ll.head = mergeLists(ll1.head,ll2.head) 
+    assert ll.__str__() == "{1}->{5}->{3}->{9}->{2}->None"

@@ -107,9 +107,7 @@ class LinkedList:
         for i in range(1, mid_index):
             current = current.next
         return current.value
-
-
-
+    
     def __str__(self):
         current = self.head  
         linked_list_string=""      
@@ -126,3 +124,28 @@ class Node:
         self.value = value
         self.next  = next
 
+def mergeLists(head1, head2):        
+    temp = None
+    if head1 is None:
+        return head2
+    if head2 is None:
+        return head1
+    temp = head1
+    temp.next = mergeLists(head2, head1.next)
+    return temp
+
+def mergeSortedLists(head1, head2):    
+    if head1 is None:
+        return head2
+    if head2 is None:
+        return head1    
+    if head1.value < head2.value:        
+        head1.next = mergeSortedLists(head1.next, head2)
+        return head1
+    else:        
+        head2.next = mergeSortedLists(head1, head2.next)
+        return head2    
+
+
+
+    
